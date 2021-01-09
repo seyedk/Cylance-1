@@ -1,0 +1,15 @@
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/bin/Debug/netcoreapp3.1/Cyclance.test.deps.json
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/bin/Debug/netcoreapp3.1/Cyclance.test.runtimeconfig.json
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/bin/Debug/netcoreapp3.1/Cyclance.test.runtimeconfig.dev.json
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/bin/Debug/netcoreapp3.1/Cyclance.test.dll
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/bin/Debug/netcoreapp3.1/Cyclance.test.pdb
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/bin/Debug/netcoreapp3.1/JWT.dll
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.csprojAssemblyReference.cache
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.AssemblyInfoInputs.cache
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.AssemblyInfo.cs
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.csproj.CoreCompileInputs.cache
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.csproj.CopyComplete
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.dll
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.pdb
+/Users/seyedketabchi/dev/Cylance/Cyclance.test/obj/Debug/netcoreapp3.1/Cyclance.test.genruntimeconfig.cache

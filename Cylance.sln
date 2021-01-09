@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cylance", "Cylance\Cylance.csproj", "{69CFB2FF-20DF-498F-99DD-9CD9EA468F80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cyclance.test", "Cyclance.test\Cyclance.test.csproj", "{A109F371-B293-4249-8675-8D4342C404CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69CFB2FF-20DF-498F-99DD-9CD9EA468F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CFB2FF-20DF-498F-99DD-9CD9EA468F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69CFB2FF-20DF-498F-99DD-9CD9EA468F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CFB2FF-20DF-498F-99DD-9CD9EA468F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A109F371-B293-4249-8675-8D4342C404CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A109F371-B293-4249-8675-8D4342C404CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A109F371-B293-4249-8675-8D4342C404CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A109F371-B293-4249-8675-8D4342C404CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73D73C84-4F23-4A62-B805-AAB9C189486C}
+	EndGlobalSection
+EndGlobal

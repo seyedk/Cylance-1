@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{69CFB2FF-20DF-498F-99DD-9CD9EA468F80}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Cylance/GetThreats.cs">
+    <Files>
+      <File FileName="Cylance/Code/CylanceAuthRequest.cs" Line="25" Column="1" />
+      <File FileName="Cylance/GetThreats.cs" Line="140" Column="37" />
+      <File FileName="Cylance/host.json" Line="1" Column="1" />
+      <File FileName="Cylance/local.settings.json" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Cylance" expanded="True">
+            <Node name="Cylance" expanded="True">
+              <Node name="Code" expanded="True" />
+              <Node name="GetThreats.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Cylance PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
