@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -9,7 +10,10 @@ using Cylance;
 using Cylance.Code;
 using JWT;
 using JWT.Algorithms;
+using JWT.Builder;
 using JWT.Serializers;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 
 namespace Cyclance.test
@@ -20,7 +24,7 @@ namespace Cyclance.test
         static HttpResponseMessage response = new HttpResponseMessage();
         static string jsonResponse = string.Empty;
 
-        private static string GenerateAuthorizationToken(JwtClaims jwtClaims, string appSecret)
+        private static string GenerateAuthorizationToken_old(JwtClaims jwtClaims, string appSecret)
         {
             if (jwtClaims == null)
             {
@@ -31,13 +35,42 @@ namespace Cyclance.test
             {
                 throw new ArgumentException(nameof(appSecret));
             }
-
+            var payload = new Dictionary<string, object>()
+            {
+                {"exp", 1610241683},
+           
+                {"iat", 1610239883},
+                {"iss", "http://cylance.com"},
+                {"sub", "d4146a43-6826-40f3-b136-67de6f996c71"},
+                {"tid", "ba50714d-f006-47db-9420-fcc0b00666e3"},
+                {"jti", "997ebe57-5425-408c-abfb-a20aad2738ca"}
+                
+            };
             var algorithm = new HMACSHA256Algorithm();
             var serializer = new JsonNetSerializer();
             var encoder = new JwtBase64UrlEncoder();
             var jwt = new JwtEncoder(algorithm, serializer, encoder);
 
-            return jwt.Encode(jwtClaims, appSecret);
+            return jwt.Encode(payload, appSecret);
+            
+        }
+        
+        private static string GenerateAuthorizationToken( string appSecret)
+        {
+            var token = new JwtBuilder()
+                .WithAlgorithm(new HMACSHA256Algorithm()) // symmetric
+                .WithSecret(appSecret)
+                .AddClaim("exp", Convert.ToInt32(DateTimeOffset.UtcNow.AddSeconds(1800).ToUnixTimeSeconds()))
+                .AddClaim("iat", Convert.ToInt32(DateTimeOffset.UtcNow.ToUnixTimeSeconds()))
+                .AddClaim("iss", "http://cylance.com")
+                .AddClaim("sub", "d4146a43-6826-40f3-b136-67de6f996c71")
+                .AddClaim("tid", "ba50714d-f006-47db-9420-fcc0b00666e3")
+                .AddClaim("jti", Guid.NewGuid().ToString())
+                .Encode();
+
+            Console.WriteLine(token);
+            return token;
+
         }
 
         private static async Task GenerateAccessToken(string authToken)
@@ -58,8 +91,8 @@ namespace Cyclance.test
                 queryClient.DefaultRequestHeaders.Accept.Clear();
                 queryClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                queryClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + authRequest.AuthToken);
-
+                // queryClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + authRequest.AuthToken);
+                
                 string _getResults = "/auth/v2/token";
 
                 var jsonObject = new CylanceAuthRequest
@@ -80,9 +113,11 @@ namespace Cyclance.test
                     }
                 };
 
-                var content = new StringContent(JsonConvert.SerializeObject(jsonObject).ToString(), Encoding.UTF8,
+                var content = new StringContent(JsonConvert.SerializeObject(new {auth_token = authRequest.AuthToken}).ToString(), Encoding.UTF8,
                     "application/json");
                 //var content = JsonConvert.SerializeObject(tokenBody);
+
+                // var response = await queryClient.PostAsync(_getResults, content);
 
                 var response = await queryClient.PostAsync(_getResults, content);
 
@@ -112,7 +147,8 @@ namespace Cyclance.test
 
                 try
                 {
-                    var authToken = GenerateAuthorizationToken(jwtClaims, appSecret);
+                    // var authToken = GenerateAuthorizationToken(jwtClaims, appSecret);
+                    var authToken = GenerateAuthorizationToken( appSecret);
                     //Console.WriteLine($"\n[Authorization Token]\n{authToken}\n");
 
                     await GenerateAccessToken(authToken);
